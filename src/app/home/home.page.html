@@ -1,14 +1,18 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-img src="assets/hello.jpg"></ion-img>
+
+  <ion-item id="username" color="{{color}}">
+    <ion-label position="floating">E-mail: </ion-label>
+    <ion-input (keyup)="validatorkey()" [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+  <ion-item id="password" color="{{color2}}">
+    <ion-label position="floating">Password:</ion-label>
+    <ion-input (keyup)="validatorkey()" [(ngModel)]="password"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="validator()" id="button" expand="block">Log-In</ion-button>
+
+  <a (click)="forgot()" id="link">New here? Register.</a>
 </ion-content>
