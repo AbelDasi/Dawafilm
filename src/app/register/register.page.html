@@ -1,9 +1,20 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>register</ion-title>
+  <ion-toolbar color="primary" class="ion-text-center">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>dawAFilm</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
+  <ion-item class="input">
+    <ion-label position="floating">Username</ion-label>
+    <ion-input [(ngModel)] = "name" (keyup)="validateInputs2()"></ion-input>
+  </ion-item>
+  <ion-item class="input">
+    <ion-label position="floating">Password</ion-label>
+    <ion-input [(ngModel)] = "passwd" (keyup)="validateInputs2()"><ion-icon name="eye"></ion-icon></ion-input>
+  </ion-item>
+  <ion-button id="btn" color="dark" expand="block" (click)="validateInputs()">save</ion-button>
+  <ion-label color="danger" class="marginLeft">{{labelMsg}}</ion-label>
 </ion-content>

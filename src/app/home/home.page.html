@@ -1,18 +1,15 @@
-
 <ion-content>
-  <ion-img src="assets/hello.jpg"></ion-img>
-
-  <ion-item id="username" color="{{color}}">
-    <ion-label position="floating">E-mail: </ion-label>
-    <ion-input (keyup)="validatorkey()" [(ngModel)]="email"></ion-input>
+  <ion-img id="img" src="assets/hello.jpg"></ion-img>
+  <ion-item class="input">
+    <ion-label position="floating">Username</ion-label>
+    <ion-input [(ngModel)] = "name" (keyup)="validateInputs2()"></ion-input>
   </ion-item>
-
-  <ion-item id="password" color="{{color2}}">
-    <ion-label position="floating">Password:</ion-label>
-    <ion-input (keyup)="validatorkey()" [(ngModel)]="password"></ion-input>
+  <ion-item class="input">
+    <ion-label position="floating">Password</ion-label>
+    <ion-input [(ngModel)] = "passwd" (keyup)="validateInputs2()"></ion-input>
   </ion-item>
-
-  <ion-button (click)="validator()" id="button" expand="block">Log-In</ion-button>
-
-  <a (click)="register()" id="link">New here? Register.</a>
+  <ion-button id="btn" color="dark" expand="block" (click)="validateInputs()">Login</ion-button>
+  <ion-label color="danger" class="marginLeft">{{labelMsg}}</ion-label>
+  <a id="link" (click)="handleButtonClick()">{{forgotString}}</a>
+  <a id="link" (click)="resgistry()">Register</a>
 </ion-content>
